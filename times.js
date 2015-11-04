@@ -38,3 +38,25 @@ function getLabClose() {
 	dd.setSeconds(0);
 	return dd;
 };
+
+
+function getWeek() {
+	var tri1 = new Date("7 September 2015");
+	var tri2 = new Date("11 January 2016");
+	var dd = new Date();
+	dd.setHours(0);
+	dd.setMilliseconds(0);
+	dd.setMinutes(0);
+	dd.setSeconds(0);
+	
+	if(dd > tri2){
+		//scale our date back to monday
+		dd.setDate(dd.getDate() - (dd.getDay()-1));
+		return Math.ceil((dd - tri2)*1.6534e-9);
+	}else if(dd > tri1){
+		//scale our date back to monday
+		dd.setDate(dd.getDate() - (dd.getDay()-1));
+		return Math.ceil((dd - tri1)*1.6534e-9);
+	}
+	return 0;
+};

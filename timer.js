@@ -102,3 +102,9 @@ function Resync(){
 	}
 }
 setInterval(Resync(),100000);
+
+function UpdateBottomLabel(){
+	$("#fadeout").html((new Date()).toGMTString().slice(0,-7)+ "  -- Week "+getWeek());
+}
+
+setInterval(UpdateBottomLabel(),60000);
