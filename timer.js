@@ -8,6 +8,7 @@ var mainDiv = $("#maindiv");
 var leftDiv = $("#leftdiv");
 var rightDiv = $("#rightdiv");
 var ScrollLimit = document.body.offsetHeight;
+var clocks = [];
 
 //Sort the Tiem array by soonest
 function SortTime(a, b) {
@@ -52,7 +53,7 @@ for (var i = 0; i < times.length && i < 5; i++) {
 	var clock = clockDiv.FlipClock({ clockFace: 'DailyCounter' });
 	clock.setTime((t.date - new Date()) * 0.001);
 	clock.setCountdown(true);
-	
+	clocks.push({t:t.date,c:clock});
 	//add elements to page
 	row.append(nameDiv);
 	clockcontainer.append(clockDiv);
@@ -80,6 +81,7 @@ for (var i = 5; i < times.length; i++) {
 	var clock = clockDiv.FlipClock({ clockFace: 'DailyCounter2' });
 	clock.setTime((t.date - new Date()) * 0.001);
 	clock.setCountdown(true);
+	clocks.push({t:t.date,c:clock});
 	row.append(nameDiv);
 	clockcontainer.append(clockDiv);
 	row.append(clockcontainer);
@@ -92,3 +94,11 @@ rightDiv.append($('<div />', { "class": 'spacer', text: "" }));
 rightDiv.scrollTop(999999);
 ScrollLimit = rightDiv.scrollTop();
 rightDiv.scrollTop(0);
+
+function Resync(){
+	for (var i = 0; i < clocks.length; i++) {
+		var c = clocks[i];
+		c.c.setTime((c.t - new Date()) * 0.001);
+	}
+}
+setInterval(Resync(),100000);
