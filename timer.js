@@ -126,8 +126,10 @@ function FinalCountdown(){
 		 Resync();
 	 }else if(event.keyCode == 102){
 		 FinalCountdown();
-	 }else if(event.keyCode == 115){
+	 }else if(event.keyCode == 35){
 		 snoop.play();
+	 }else if(event.keyCode == 115){
+		Snow();
 	 }
 	 console.log(event);
  });
@@ -141,4 +143,8 @@ function Tick(){
 	if(clocks[0].c.getTime().time == 15600){
 		snoop.play();
 	}
+}
+
+function Snow(){
+	snowStorm.toggleSnow();
 }
