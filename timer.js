@@ -108,3 +108,20 @@ function UpdateBottomLabel(){
 }
 
 setInterval(UpdateBottomLabel(),60000);
+
+
+function FinalCountdown(){
+	for (var i = 0; i < clocks.length; i++) {
+		var c = clocks[i];
+		c.c.setTime(5184010);
+	}
+}
+
+ $("body").keypress(function(event){
+	 if(event.keyCode == 114){
+		 Resync();
+	 }else if(event.keyCode == 102){
+		 FinalCountdown();
+	 }
+	 console.log(event );
+ });
