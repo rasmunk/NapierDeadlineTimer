@@ -8,7 +8,7 @@ var times = [
 	{ name: "SE Exam", date: new Date("07/dec/2015 9:30 AM") },
 	{ name: "ADS Exam", date: new Date("08/dec/2015 9:30 AM") },
 	{ name: "DBS Exam", date: new Date("09/dec/2015 9:30 AM") },
-	{ name: "C&PS1 Exam", date: new Date("08/dec/2015 1:30 PM") },
+	{ name: "C&PS Exam", date: new Date("08/dec/2015 1:30 PM") },
 	{ name: "Thanksgiving", date: new Date("26/nov/2015") },
 	{ name: "New Years", date: new Date("01/jan/2016") },
 	{ name: "ADS CW", date: new Date("20/nov/2015 4:00 PM") },
@@ -16,6 +16,7 @@ var times = [
 	{ name: "SD3 CW", date: new Date("02/dec/2015 4:00 PM") },
 	{ name: "SE CW3", date: new Date("04/dec/2015 4:00 PM") },
   	{ name: "Star Wars: TFA", date: new Date("17/dec/2015 00:01 AM") }
+	{ name: "MOSP Essay", date: new Date("11/dec/2015 04:00 PM") }
 ]
 
 function getSaas() {
