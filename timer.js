@@ -13,7 +13,7 @@ $(document).ready(function() {
 	var rightDiv = $("#rightdiv");
 	var ScrollLimit = document.body.offsetHeight;
 	snoop = new Audio('http://vps.samserrels.com/timer/smoke.mp3');
-
+	doot = new Audio('http://vps.samserrels.com/timer/doot.mp3');
 	//Sort the Tiem array by soonest
 	function SortTime(a, b) {
 		var ad = a.date;
@@ -130,6 +130,8 @@ function FinalCountdown(){
 		 snoop.play();
 	 }else if(event.keyCode == 115){
 		Snow();
+	 }else if(event.keyCode == 100){
+		 doot.play();
 	 }
 	 console.log(event);
  });
