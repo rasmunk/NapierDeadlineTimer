@@ -15,6 +15,7 @@ $(document).ready(function() {
 	snoop = new Audio('http://vps.samserrels.com/timer/smoke.mp3');
 	doot = new Audio('http://vps.samserrels.com/timer/doot.mp3');
 	quack = new Audio('http://vps.samserrels.com/timer/quack.mp3');
+	rimshot = new Audio('http://vps.samserrels.com/timer/rimshot.mp3');
 	//Sort the Tiem array by soonest
 	function SortTime(a, b) {
 		var ad = a.date;
@@ -135,6 +136,10 @@ function FinalCountdown(){
 		 doot.play();
 	 }else if(event.keyCode == 113){
 		 quack.play();
+	 }else if(event.keyCode == 113){
+		 quack.play();
+	 }else if(event.keyCode == 98){
+		 rimshot.play();
 	 }
 	 console.log(event);
  });
