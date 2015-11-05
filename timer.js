@@ -1,14 +1,17 @@
-$(document).ready(function() {
-	//--- configs -------------------------
-	var ScrollSpeed = 0.022;
-	var ScrollWaitTime = 10000;
+//--- configs -------------------------
+var ScrollSpeed = 0.022;
+var ScrollWaitTime = 10000;
 
-	//-------------------------------------
+//-------------------------------------
+var clocks = [];
+
+$(document).ready(function() {
+
 	var mainDiv = $("#maindiv");
 	var leftDiv = $("#leftdiv");
 	var rightDiv = $("#rightdiv");
 	var ScrollLimit = document.body.offsetHeight;
-	var clocks = [];
+	var snoop = new Audio('http://vps.samserrels.com/timer/smoke.mp3');
 
 	//Sort the Tiem array by soonest
 	function SortTime(a, b) {
@@ -122,10 +125,18 @@ function FinalCountdown(){
 		 Resync();
 	 }else if(event.keyCode == 102){
 		 FinalCountdown();
+	 }else if(event.keyCode == 115){
+		 snoop.play();
 	 }
-	 console.log(event );
+	 console.log(event);
  });
 
 	setInterval(Resync,100000);
 	setInterval(UpdateBottomLabel,5000);
 });
+
+function Tick(){
+	if(clocks[0].c.getTime().time == 15600){
+		snoop.play();
+	}
+}
