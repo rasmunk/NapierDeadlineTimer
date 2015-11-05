@@ -14,6 +14,7 @@ $(document).ready(function() {
 	var ScrollLimit = document.body.offsetHeight;
 	snoop = new Audio('http://vps.samserrels.com/timer/smoke.mp3');
 	doot = new Audio('http://vps.samserrels.com/timer/doot.mp3');
+	quack = new Audio('http://vps.samserrels.com/timer/quack.mp3');
 	//Sort the Tiem array by soonest
 	function SortTime(a, b) {
 		var ad = a.date;
@@ -132,6 +133,8 @@ function FinalCountdown(){
 		Snow();
 	 }else if(event.keyCode == 100){
 		 doot.play();
+	 }else if(event.keyCode == 113){
+		 quack.play();
 	 }
 	 console.log(event);
  });
