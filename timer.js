@@ -4,6 +4,7 @@ var ScrollWaitTime = 10000;
 
 //-------------------------------------
 var clocks = [];
+var snoop;
 
 $(document).ready(function() {
 
@@ -11,7 +12,7 @@ $(document).ready(function() {
 	var leftDiv = $("#leftdiv");
 	var rightDiv = $("#rightdiv");
 	var ScrollLimit = document.body.offsetHeight;
-	var snoop = new Audio('http://vps.samserrels.com/timer/smoke.mp3');
+	snoop = new Audio('http://vps.samserrels.com/timer/smoke.mp3');
 
 	//Sort the Tiem array by soonest
 	function SortTime(a, b) {
@@ -133,6 +134,7 @@ function FinalCountdown(){
 
 	setInterval(Resync,100000);
 	setInterval(UpdateBottomLabel,5000);
+	setInterval(Tick,200);
 });
 
 function Tick(){
