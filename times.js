@@ -15,7 +15,7 @@ var times = [
 	{ name: "SE CW2", date: new Date("27/nov/2015 4:00 PM") },
 	{ name: "SD3 CW", date: new Date("02/dec/2015 4:00 PM") },
 	{ name: "SE CW3", date: new Date("04/dec/2015 4:00 PM") },
-  	{ name: "Star Wars: TFA", date: new Date("17/dec/2015 00:01 AM") }
+  	{ name: "Star Wars: TFA", date: new Date("17/dec/2015 00:01 AM") },
 	{ name: "MOSP Essay", date: new Date("11/dec/2015 04:00 PM") }
 ]
 
