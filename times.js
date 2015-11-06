@@ -33,6 +33,13 @@ function getSaas() {
 function getLabClose() {
 	var dd = new Date();
 	var isWeekend = (dd.getDay() == 6) || (dd.getDay() == 0);
+	// If it's a weekend and we're past 5pm, or it's a weekday and we're past 9pm
+	// Set the date to tomorrow
+	if ((isWeekend && dd.getHours() >= 17) || (!isWeekend && dd.getHours() >= 21)) {
+		dd.setDate(dd.getDate() + 1);
+	}
+	// Re-check to see if tomorrow is a weekend
+	isWeekend = (dd.getDay() == 6) || (dd.getDay() == 0);
 	dd.setHours(isWeekend ? 17 : 21);
 	dd.setMilliseconds(0);
 	dd.setMinutes(0);
