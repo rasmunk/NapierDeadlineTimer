@@ -16,6 +16,14 @@ $(document).ready(function() {
 	doot = new Audio('http://vps.samserrels.com/timer/doot.mp3');
 	quack = new Audio('http://vps.samserrels.com/timer/quack.mp3');
 	rimshot = new Audio('http://vps.samserrels.com/timer/rimshot.mp3');
+	
+	var now = new Date();
+	times = $.grep(times, function(t ) {
+		return (t.date > now);
+	});
+	
+	times.sort(SortTime);
+
 	//Sort the Tiem array by soonest
 	function SortTime(a, b) {
 		var ad = a.date;
