@@ -17,12 +17,11 @@ $(document).ready(function() {
 	quack = new Audio('http://vps.samserrels.com/timer/quack.mp3');
 	rimshot = new Audio('http://vps.samserrels.com/timer/rimshot.mp3');
 	
+	//Remove past dates
 	var now = new Date();
 	times = $.grep(times, function(t ) {
 		return (t.date > now);
 	});
-	
-	times.sort(SortTime);
 
 	//Sort the Tiem array by soonest
 	function SortTime(a, b) {

@@ -21,11 +21,11 @@ var times = [
 
 function getSaas() {
 	var dd = new Date();
-	if (dd.getDay() < 7) {
+	if (dd.getDate() < 7) {
 		dd.setDate(7)
 	} else {
 		dd.setDate(7)
-		dd.setMonth(dd.getMonth + 1);
+		dd.setMonth(dd.getMonth() + 1);
 	};
 	return new Date(dd.getFullYear(), dd.getMonth(), dd.getDate());
 }
