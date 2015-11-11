@@ -196,6 +196,17 @@ function SetBGColour(hex) {
   $("body").css("background", "rgb(" + r + "," + g + "," + b + ")");
 }
 
+function SetTextColour(hex) {
+  $("body").css("color", hex);
+}
+function SetInvertTextColour(hex) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  var r = 255 - parseInt(result[1], 16);
+  var g = 255 - parseInt(result[2], 16);
+  var b = 255 - parseInt(result[3], 16);
+  $("body").css("color", "rgb(" + r + "," + g + "," + b + ")");
+}
+
 function SetColour(hex) {
   SetFadeColour(hex);
   SetBGColour(hex)
@@ -225,9 +236,12 @@ function PartyTime() {
     clearInterval(partyCallback);
     partyCallback = undefined;
     SetColour("#000000");
+    SetTextColour("#FFFFFF")
   } else {
     partyCallback = setInterval(function () {
-      SetColour(Rainbow(partyCounter += 0.04));
+      var c =Rainbow(partyCounter += 0.04);
+      SetColour(c);
+      SetInvertTextColour(c);
     }, 1000);
   }
 }
