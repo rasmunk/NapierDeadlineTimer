@@ -7,6 +7,17 @@ var clocks = [];
 var snoop, doot, quack, rimshot;
 var leftDiv, rightDiv;
 var ScrollLimit;
+var b56cal;
+
+var currentEvent;
+var weekday = new Array(7);
+weekday[0]=  "Sunday";
+weekday[1] = "Monday";
+weekday[2] = "Tuesday";
+weekday[3] = "Wednesday";
+weekday[4] = "Thursday";
+weekday[5] = "Friday";
+weekday[6] = "Saturday";
 
 $(document).ready(function () {
   leftDiv = $("#leftColumnDiv");
@@ -16,6 +27,9 @@ $(document).ready(function () {
   doot = new Audio('http://vps.samserrels.com/timer/doot.mp3');
   quack = new Audio('http://vps.samserrels.com/timer/quack.mp3');
   rimshot = new Audio('http://vps.samserrels.com/timer/rimshot.mp3');
+  b56cal = $.parseIcs('calendar.ics');
+  //console.log(b56cal);
+  
   //Remove past dates
   var now = new Date();
   times = $.grep(times, function (t) {
@@ -110,6 +124,7 @@ $(document).ready(function () {
 
   UpdateBottomLabel();
   setInterval(UpdateBottomLabel, 5000);
+  getNextCalendarEvent();
 });
 
 function Resync() {
@@ -176,7 +191,26 @@ function ScrollDown() {
 }
 
 function UpdateBottomLabel() {
-  $("#fadeBottomDiv").html((new Date()).toGMTString().slice(0, -7) + " - Week " + getWeek());
+  var bottomStr = "<p>" + (new Date()).toGMTString().slice(0, -7);
+  bottomStr += " - Week " + getWeek() + "</p>";
+  
+  bottomStr += "<p><small>";
+  var next = getNextCalendarEvent();
+  if (next === null || next === undefined) {
+    bottomStr += "Nothing until next week!";
+  } else {
+    if (currentEvent) {
+      bottomStr += "Current Class: ";
+    } else {
+      bottomStr += "Next Class: ";
+    }
+    var d = icsDateToJSDate(next['dtstart'][0]['value']);
+    var e = icsDateToJSDate(next['dtend'][0]['value']);
+    bottomStr += next['summary'][0]['value'] + ": " + weekday[d.getDay()] + " ";
+    bottomStr += d.getHours() + ":00 til " + e.getHours() + ":00";
+  }
+  bottomStr += "</small></p>";
+  $("#fadeBottomDiv").html(bottomStr);
 }
 
 function SetFadeColour(hex) {
@@ -244,4 +278,80 @@ function PartyTime() {
       SetInvertTextColour(c);
     }, 1000);
   }
+}
+
+function getNextCalendarEvent() {
+  // Calendar will start on a monday
+  var dtstart = b56cal['dtstart'][0]['value'];
+
+  var now = new Date();
+  var tomorrow_date = new Date(now.getTime() + 24*60*60*1000);
+
+  var today = Array();
+  var tomorrow = Array();
+
+  var events = b56cal['event'];
+  events.forEach(function (evt) {
+    var eventDate = icsDateToJSDate(evt['dtstart'][0]['value']);
+    console.log(eventDate.getDay());
+    if (eventDate.getDay() === now.getDay()) {
+      today.push(evt);
+    } else if (eventDate.getDay() === tomorrow_date.getDay()) {
+      tomorrow.push(evt);
+    }
+  });
+
+  var current;
+
+  today.forEach(function(evt) {
+    var eventStart = icsDateToJSDate(evt['dtstart'][0]['value']);
+    var eventEnd = icsDateToJSDate(evt['dtend'][0]['value']);
+    if(eventStart < now && now < eventEnd){
+      current = evt;
+    }
+  });
+
+  if (current === undefined || current === null) {
+    var next;
+
+    // Ok, we've not got something in progress, check for next event today
+    today.forEach(function(evt){
+      var eventStart = icsDateToJSDate(evt['dtstart'][0]['value']);
+      if (now < eventStart) {
+        if ((next === undefined || next === null) || evt < next) {
+          next = evt;
+        }
+      }
+    });
+
+    if (next === undefined || next === null) {
+      tomorrow.forEach(function(evt) {
+        var eventStart = icsDateToJSDate(evt['dtstart'][0]['value']);
+        if ((next === undefined || next === null) || evt < next) {
+          next = evt;
+        }
+      });
+    }
+
+    currentEvent = false;
+    return next;
+  } else {
+    currentEvent = true;
+    return current;
+  }
+}
+
+function icsDateToJSDate(date) {
+  // 20160111T130000
+  var year = parseInt(date.substr(0, 4));
+  var month = parseInt(date.substr(4, 2));
+  var day = parseInt(date.substr(6, 2));
+  var hour = parseInt(date.substr(9, 2));
+  var minute = parseInt(date.substr(11, 2));
+  var sec = parseInt(date.substr(13, 2));
+
+  // console.log(year + "/" + month + "/" + day + " " + hour + ":" + minute + ":" + sec);
+
+  // JS needs some strange hacky off-by-one fix for month
+  return new Date(year, month-1, day, hour, minute, sec);
 }

@@ -16,7 +16,18 @@ var times = [
 	{ name: "SD3 CW", date: new Date("01/dec/2015 11:59 PM") },
 	{ name: "SE CW3", date: new Date("04/dec/2015 4:00 PM") },
   	{ name: "Star Wars: TFA", date: new Date("17/dec/2015 00:01 AM") },
-	{ name: "MOSP Essay", date: new Date("11/dec/2015 04:00 PM") }
+	{ name: "MOSP Essay", date: new Date("11/dec/2015 04:00 PM") },
+
+	// Tri 2 15/16
+	{ name: "Exam Results", date: new Date("26/jan/2016 08:30 AM") },
+	{ name: "Global Game Jam", date: new Date("29/jan/2016 5:00 PM") },
+	{ name: "AG Milestone 1", date: new Date("01/feb/2016 10:00 AM") },
+	{ name: "I:SS Report", date: new Date("12/feb/2016 11:59 PM") },
+	{ name: "AG Milestone 2", date: new Date("29/feb/2016 10:00 AM") },
+	{ name: "I:SS Essay", date: new Date("18/mar/2016 11:59 PM") },
+	{ name: "AG Milestone 3", date: new Date("04/apr/2016 10:00 AM") },
+	{ name: "DSA CW", date: new Date("8/apr/2016 1:00 PM") },
+	{ name: "Hons Poster Session", date: new Date("13/apr/2016 12:00 PM") }
 ]
 
 function getSaas() {
