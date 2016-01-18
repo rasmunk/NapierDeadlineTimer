@@ -16,6 +16,9 @@ $(document).ready(function () {
   doot = new Audio('http://vps.samserrels.com/timer/doot.mp3');
   quack = new Audio('http://vps.samserrels.com/timer/quack.mp3');
   rimshot = new Audio('http://vps.samserrels.com/timer/rimshot.mp3');
+  b56cal = $.parseIcs('calendar.ics');
+  console.log(b56cal);
+  
   //Remove past dates
   var now = new Date();
   times = $.grep(times, function (t) {
@@ -176,7 +179,12 @@ function ScrollDown() {
 }
 
 function UpdateBottomLabel() {
-  $("#fadeBottomDiv").html((new Date()).toGMTString().slice(0, -7) + " - Week " + getWeek());
+  var bottomStr = "<p>" + (new Date()).toGMTString().slice(0, -7);
+  bottomStr += " - Week " + getWeek() + "</p>";
+  
+  bottomStr += "<p>";
+  bottomStr += "</p>";
+  $("#fadeBottomDiv").html(bottomStr);
 }
 
 function SetFadeColour(hex) {
