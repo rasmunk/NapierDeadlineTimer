@@ -162,7 +162,7 @@ $("body").keypress(function (event) {
       break;
   }
 
-  console.log(event);
+  //console.log(event);
 });
 
 
@@ -309,12 +309,12 @@ function getNextCalendarEvent() {
     var eventStart = new Date(now.getFullYear(), now.getMonth(), now.getDate(), s.getHours(), 0, 0);
     var eventEnd = new Date(now.getFullYear(), now.getMonth(), now.getDate(), e.getHours(), 0, 0);
 
-    console.log("Considering " + evt['summary'][0]['value']);
-    console.log(eventStart);
-    console.log(eventEnd);
-    console.log(now.getHours());
-    console.log(eventStart < now.getHours());
-    console.log(now.getHours() < eventEnd);
+    //console.log("Considering " + evt['summary'][0]['value']);
+    //console.log(eventStart);
+    //console.log(eventEnd);
+    //console.log(now.getHours());
+    //console.log(eventStart < now.getHours());
+    //console.log(now.getHours() < eventEnd);
 
     if(eventStart < now && now < eventEnd){
       current = evt;
