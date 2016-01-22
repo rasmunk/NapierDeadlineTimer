@@ -293,7 +293,6 @@ function getNextCalendarEvent() {
   var events = b56cal['event'];
   events.forEach(function (evt) {
     var eventDate = icsDateToJSDate(evt['dtstart'][0]['value']);
-    console.log(eventDate.getDay());
     if (eventDate.getDay() === now.getDay()) {
       today.push(evt);
     } else if (eventDate.getDay() === tomorrow_date.getDay()) {
@@ -304,8 +303,19 @@ function getNextCalendarEvent() {
   var current;
 
   today.forEach(function(evt) {
-    var eventStart = icsDateToJSDate(evt['dtstart'][0]['value']);
-    var eventEnd = icsDateToJSDate(evt['dtend'][0]['value']);
+    var s = icsDateToJSDate(evt['dtstart'][0]['value']);
+    var e = icsDateToJSDate(evt['dtend'][0]['value']);
+
+    var eventStart = new Date(now.getFullYear(), now.getMonth(), now.getDate(), s.getHours(), 0, 0);
+    var eventEnd = new Date(now.getFullYear(), now.getMonth(), now.getDate(), e.getHours(), 0, 0);
+
+    console.log("Considering " + evt['summary'][0]['value']);
+    console.log(eventStart);
+    console.log(eventEnd);
+    console.log(now.getHours());
+    console.log(eventStart < now.getHours());
+    console.log(now.getHours() < eventEnd);
+
     if(eventStart < now && now < eventEnd){
       current = evt;
     }
@@ -316,7 +326,8 @@ function getNextCalendarEvent() {
 
     // Ok, we've not got something in progress, check for next event today
     today.forEach(function(evt){
-      var eventStart = icsDateToJSDate(evt['dtstart'][0]['value']);
+      var s = icsDateToJSDate(evt['dtstart'][0]['value']);
+      var eventStart = new Date(now.getFullYear(), now.getMonth(), now.getDate(), s.getHours(), 0, 0);
       if (now < eventStart) {
         if ((next === undefined || next === null) || evt < next) {
           next = evt;
@@ -326,7 +337,8 @@ function getNextCalendarEvent() {
 
     if (next === undefined || next === null) {
       tomorrow.forEach(function(evt) {
-        var eventStart = icsDateToJSDate(evt['dtstart'][0]['value']);
+        var s = icsDateToJSDate(evt['dtstart'][0]['value']);
+        var eventStart = new Date(now.getFullYear(), now.getMonth(), now.getDate(), s.getHours(), 0, 0);
         if ((next === undefined || next === null) || evt < next) {
           next = evt;
         }
