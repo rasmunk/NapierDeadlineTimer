@@ -28,7 +28,7 @@ var times = [
 	{ name: "I:SS Essay", date: new Date("18/mar/2016 11:59 PM") },
 	{ name: "AG Milestone 3", date: new Date("04/apr/2016 10:00 AM") },
 	{ name: "DSA CW", date: new Date("8/apr/2016 1:00 PM") },
-	{ name: "Hons Poster Session", date: new Date("13/apr/2016 12:00 PM") }
+	{ name: "Hons Poster Session", date: new Date("13/apr/2016 12:00 PM") },
 	{ name: "ProgFun CW1", date: new Date("26/feb/2016 12:00 PM") }	
 ]
 
