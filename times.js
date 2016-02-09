@@ -31,7 +31,9 @@ var times = [
 	{ name: "DSA CW", date: new Date("8/apr/2016 1:00 PM") },
 	{ name: "Hons Poster Session", date: new Date("13/apr/2016 12:00 PM") },
 	{ name: "ProgFun CW1", date: new Date("26/feb/2016 12:00 PM") }	,
-	{ name: "Comp Int CW", date: new Date("01/apr/2016 12:00 PM") }
+	{ name: "Comp Int CW", date: new Date("01/apr/2016 12:00 PM") },
+	{ name: "Fun Par CW", date: new Date("07/apr/2016 04:00 PM") },
+	{ name: "Grp Proj Report", date: new Date("29/apr/2016 04:00 PM") }
 ]
 
 function getSaas() {
