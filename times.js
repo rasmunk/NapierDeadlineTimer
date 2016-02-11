@@ -19,7 +19,7 @@ var times = [
 	{ name: "MOSP Essay", date: new Date("11/dec/2015 04:00 PM") },
 
 	// Tri 2 15/16
-	{ name: "Division OBT", date: new Date("17/feb/2016 05:30 PM") },
+	{ name: "Division OBT", date: new Date("19/feb/2016 11:00 AM") },
 	{ name: "Exam Results", date: new Date("26/jan/2016 08:30 AM") },
 	{ name: "Global Game Jam", date: new Date("29/jan/2016 5:00 PM") },
 	{ name: "AG Milestone 1", date: new Date("01/feb/2016 10:00 AM") },
