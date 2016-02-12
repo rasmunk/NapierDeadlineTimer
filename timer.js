@@ -4,7 +4,7 @@ var ScrollWaitTime = 10000;
 
 //-------------------------------------
 var clocks = [];
-var snoop, doot, quack, rimshot;
+var snoop, doot, quack, rimshot, laughtrack, seinfield, sadtrumbone, airhorn, johncena, nemesis, victory;
 var leftDiv, rightDiv;
 var ScrollLimit;
 var b56cal;
