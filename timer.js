@@ -27,6 +27,13 @@ $(document).ready(function () {
   doot = new Audio('http://vps.samserrels.com/timer/doot.mp3');
   quack = new Audio('http://vps.samserrels.com/timer/quack.mp3');
   rimshot = new Audio('http://vps.samserrels.com/timer/rimshot.mp3');
+  laughtrack = new Audio('http://www.myinstants.com/media/sounds/tiduss-laugh.mp3');
+  seinfield = new Audio('http://www.myinstants.com/media/sounds/seinfeld-season-7-closing-credits.mp3');
+  sadtrumbone = new Audio('http://www.myinstants.com/media/sounds/sadtrombone.swf.mp3');
+  airhorn = new Audio('http://www.myinstants.com/media/sounds/air-horn-club-sample.mp3');
+  johncena = new Audio('http://www.myinstants.com/media/sounds/and-his-name-is-john-cena-1_6.mp3');
+  nemesis = new Audio('http://www.myinstants.com/media/sounds/tf_nemesis.mp3');
+  victory = new Audio('http://www.myinstants.com/media/sounds/victoryff.swf.mp3');
   b56cal = $.parseIcs('calendar.ics');
   //console.log(b56cal);
   
@@ -160,6 +167,28 @@ $("body").keypress(function (event) {
     case 112:
       PartyTime();
       break;
+	case 76;
+	  laughtrack.play();
+	  break;
+	case 83;
+	  seinfield.play();
+	  break;
+	case 84;
+	  sadtrumbone.play();
+	  break;
+	case 65;
+	  airhorn.play();
+	  break;
+	case 74;
+	  johncena.play();
+	  break;
+	case 78;
+	  nemesis.play();
+	  break;
+	case 86;
+	  victory.play();
+	  break;
+	
   }
 
   //console.log(event);
