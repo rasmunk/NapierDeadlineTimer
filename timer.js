@@ -167,25 +167,25 @@ $("body").keypress(function (event) {
     case 112:
       PartyTime();
       break;
-	case 76;
+	case 108;
 	  laughtrack.play();
 	  break;
-	case 83;
+	case 106;
 	  seinfield.play();
 	  break;
-	case 84;
+	case 116;
 	  sadtrumbone.play();
 	  break;
 	case 65;
 	  airhorn.play();
 	  break;
-	case 74;
+	case 99;
 	  johncena.play();
 	  break;
-	case 78;
+	case 110;
 	  nemesis.play();
 	  break;
-	case 86;
+	case 118;
 	  victory.play();
 	  break;
 	
