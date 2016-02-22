@@ -33,8 +33,10 @@ var times = [
 	{ name: "ProgFun CW1", date: new Date("28/feb/2016 11:59 PM") }	,
 	{ name: "Comp Int CW", date: new Date("01/apr/2016 12:00 PM") },
 	{ name: "Fun Par CW", date: new Date("07/apr/2016 04:00 PM") },
-	{ name: "Grp Proj Report", date: new Date("29/apr/2016 04:00 PM") }
-]
+	{ name: "Grp Proj Report", date: new Date("29/apr/2016 04:00 PM") },
+	{ name: "Globetrotters Reopens", date: new Date("28/feb/2016 12:00 PM") }
+	
+	]
 
 function getSaas() {
 	var dd = new Date();
