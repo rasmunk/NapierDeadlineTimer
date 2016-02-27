@@ -34,7 +34,8 @@ var times = [
 	{ name: "Comp Int CW", date: new Date("01/apr/2016 12:00 PM") },
 	{ name: "Fun Par CW", date: new Date("07/apr/2016 04:00 PM") },
 	{ name: "Grp Proj Report", date: new Date("29/apr/2016 04:00 PM") },
-	{ name: "Globetrotters Reopens", date: new Date("28/feb/2016 12:00 PM") }
+	{ name: "Globetrotters Reopens", date: new Date("28/feb/2016 12:00 PM") },
+	{ name: "House of Cards S4", date: new Date("04/mar/2016 08:00 AM") },
 	
 	]
 
