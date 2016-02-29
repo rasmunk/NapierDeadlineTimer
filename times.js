@@ -36,6 +36,7 @@ var times = [
 	{ name: "Grp Proj Report", date: new Date("29/apr/2016 04:00 PM") },
 	{ name: "Globetrotters Reopens", date: new Date("28/feb/2016 12:00 PM") },
 	{ name: "House of Cards S4", date: new Date("04/mar/2016 08:00 AM") },
+	{ name: "Archer S7", date: new Date("31/mar/2016 08:00 PM") }
 	
 	]
 
