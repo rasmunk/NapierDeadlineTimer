@@ -4,7 +4,7 @@ var ScrollWaitTime = 10000;
 
 //-------------------------------------
 var clocks = [];
-var snoop, doot, quack, rimshot, laughtrack, seinfield, sadtrumbone, airhorn, johncena, nemesis, victory, illuminati;
+var snoop, doot, quack, rimshot, laughtrack, seinfield, sadtrumbone, airhorn, johncena, nemesis, victory, illuminati,noscope;
 var leftDiv, rightDiv;
 var ScrollLimit;
 var b56cal;
@@ -35,6 +35,7 @@ $(document).ready(function () {
   nemesis = new Audio('http://www.myinstants.com/media/sounds/tf_nemesis.mp3');
   victory = new Audio('http://www.myinstants.com/media/sounds/victoryff.swf.mp3');
   illuminati = new Audio('https://www.youtube.com/watch?v=fxfEg54cCKo');
+  noscope = new Audio('https://www.youtube.com/watch?v=1O-dqWQOc8s');
   b56cal = $.parseIcs('calendar.ics');
   //console.log(b56cal);
   
@@ -192,7 +193,9 @@ $("body").keypress(function (event) {
 	case 105:
 	  illuminati.play();
 	  break;
-	 
+	case 73:
+	  noscope.play();
+	  break;
 	
   }
 
