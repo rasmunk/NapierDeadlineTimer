@@ -35,7 +35,7 @@ $(document).ready(function () {
   nemesis = new Audio('http://www.myinstants.com/media/sounds/tf_nemesis.mp3');
   victory = new Audio('http://www.myinstants.com/media/sounds/victoryff.swf.mp3');
   illuminati = new Audio('https://www.youtube.com/watch?v=fxfEg54cCKo');
-  noscope = new Audio('https://www.youtube.com/watch?v=1O-dqWQOc8s');
+  noscope = new Audio('http://soundboard.panictank.net/intervention%20420.mp3');
   b56cal = $.parseIcs('calendar.ics');
   //console.log(b56cal);
   
