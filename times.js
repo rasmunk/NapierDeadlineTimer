@@ -36,8 +36,14 @@ var times = [
 	{ name: "Grp Proj Report", date: new Date("29/apr/2016 04:00 PM") },
 	{ name: "Globetrotters Reopens", date: new Date("28/feb/2016 12:00 PM") },
 	{ name: "House of Cards S4", date: new Date("04/mar/2016 08:00 AM") },
-	{ name: "Archer S7", date: new Date("31/mar/2016 08:00 PM") }
-	
+	{ name: "Archer S7", date: new Date("31/mar/2016 08:00 PM") },
+	{ name: "DSA Exam", date: new Date("29/apr/2016 09:30 AM") },
+	{ name: "Comp Int Exam", date: new Date("03/may/2016 09:30 AM") },
+	{ name: "Graphics Exam", date: new Date("03/may/2016 09:30 AM") },
+	{ name: "Fun Par Exam", date: new Date("26/apr/2016 09:30 AM") },
+	{ name: "Mobile Apps Exam", date: new Date("27/apr/2016 09:30 AM") },
+	{ name: "SEM Exam", date: new Date("26/apr/2016 09:30 AM") },
+	{ name: "I:SS Exam", date: new Date("29/apr/2016 09:30 AM") },
 	]
 
 function getSaas() {
