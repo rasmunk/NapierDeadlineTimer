@@ -43,7 +43,7 @@ var times = [
 	{ name: "Fun Par Exam", date: new Date("26/apr/2016 09:30 AM") },
 	{ name: "Mobile Apps Exam", date: new Date("27/apr/2016 09:30 AM") },
 	{ name: "SEM Exam", date: new Date("26/apr/2016 09:30 AM") },
-	{ name: "I:SS Exam", date: new Date("29/apr/2016 09:30 AM") },
+	{ name: "I:SS Exam", date: new Date("26/apr/2016 09:30 AM") },
 	]
 
 function getSaas() {
