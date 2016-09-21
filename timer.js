@@ -72,7 +72,7 @@ $(document).ready(function () {
 
     var nameDiv = $('<div />', {
       "class": 'leftClockName',
-      html: t.name + "<br><span>" + t.date.toGMTString().slice(0, -7) + "</span>"
+      html: t.name + "<br><span>" + t.date.toString().slice(0, 21) + "</span>"
     });
 
     var row = $('<div />', {
@@ -228,7 +228,7 @@ function ScrollDown() {
 }
 
 function UpdateBottomLabel() {
-  var bottomStr = "<p>" + (new Date()).toGMTString().slice(0, -7);
+  var bottomStr = "<p>" + (new Date()).toString().slice(0, 21);
   bottomStr += " - Week " + getWeek() + "</p>";
   
   bottomStr += "<p><small>";
@@ -319,10 +319,6 @@ function PartyTime() {
 
 function getNextCalendarEvent() {
   // Calendar will start on a monday
-  //var dtstart = b56cal['dtstart'][0]['value'];
-  // Outlook ics calendar uses a x-calstart key to indicate the starting date instead of dtstart
-  var dtstart = b56cal['x-calstart'][0]['value'];
-
   var now = new Date();
   var tomorrow_date = new Date(now.getTime() + 24*60*60*1000);
 
