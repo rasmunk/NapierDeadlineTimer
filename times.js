@@ -49,8 +49,9 @@ var times = [
 	{ name: "I:SS Exam", date: new Date("26/apr/2016 09:30 AM") },
 	
 	// Tri 1 16/17
-	{ name: "ASEng TW Plan & Pitch", date: new Date("15/nov/2016 00:01 AM") },
-	{ name: "WBL Hons Poster Session", date: new Date("16/nov/2016 01:00 PM") },
+	{ name: "Halloween", date: new Date("31/oct/2016") },
+	{ name: "ASEng TW Pitch", date: new Date("15/nov/2016 00:01 AM") },
+	{ name: "WBL Hons Posters", date: new Date("16/nov/2016 01:00 PM") },
 	{ name: "Star Wars: Rogue One", date: new Date("15/dec/2016 00:01 AM") },
 	{ name: "Thanksgiving", date: new Date("26/nov/2016") },
 	{ name: "Xmas", date: new Date("25/Dec/2016") },
