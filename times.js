@@ -1,7 +1,10 @@
 var times = [
+	// Recurring
 	{ name: "Lab Close", date: getLabClose()  },
-	{ name: "Fallout 4", date: new Date("10/nov/15 0:01 AM") },
 	{ name: "SAAS Day", date: getSaas() },
+	
+	// Tri 1 15/16
+	{ name: "Fallout 4", date: new Date("10/nov/15 0:01 AM") },
 	{ name: "Xmas", date: new Date("25/Dec/2015") },
 	{ name: "C&PS CW1", date: new Date("06/nov/2015 11:59 PM") },
 	{ name: "C&PS CW2", date: new Date("06/dec/2015 11:55 PM") },
@@ -46,10 +49,8 @@ var times = [
 	{ name: "I:SS Exam", date: new Date("26/apr/2016 09:30 AM") },
 	
 	// Tri 1 16/17
-	{ name: "Lab Close", date: getLabClose()  },
-	{ name: "SAAS Day", date: getSaas() },
 	{ name: "ASEng TW Plan & Pitch", date: new Date("15/nov/2016 00:01 AM") },
-	{ name: "Hons Poster Session", date: new Date("16/nov/2016 01:00 PM") },
+	{ name: "WBL Hons Poster Session", date: new Date("16/nov/2016 01:00 PM") },
 	{ name: "Star Wars: Rogue One", date: new Date("15/dec/2016 00:01 AM") },
 	{ name: "Thanksgiving", date: new Date("26/nov/2016") },
 	{ name: "Xmas", date: new Date("25/Dec/2016") },
