@@ -319,7 +319,9 @@ function PartyTime() {
 
 function getNextCalendarEvent() {
   // Calendar will start on a monday
-  var dtstart = b56cal['dtstart'][0]['value'];
+  //var dtstart = b56cal['dtstart'][0]['value'];
+  // Outlook ics calendar uses a x-calstart key to indicate the starting date instead of dtstart
+  var dtstart = b56cal['x-calstart'][0]['value'];
 
   var now = new Date();
   var tomorrow_date = new Date(now.getTime() + 24*60*60*1000);
@@ -350,7 +352,7 @@ function getNextCalendarEvent() {
     //console.log(eventStart);
     //console.log(eventEnd);
     //console.log(now.getHours());
-    //console.log(eventStart < now.getHours());
+	//console.log(eventStart < now.getHours());
     //console.log(now.getHours() < eventEnd);
 
     if(eventStart < now && now < eventEnd){
@@ -399,7 +401,7 @@ function icsDateToJSDate(date) {
   var minute = parseInt(date.substr(11, 2));
   var sec = parseInt(date.substr(13, 2));
 
-  // console.log(year + "/" + month + "/" + day + " " + hour + ":" + minute + ":" + sec);
+  //console.log(year + "/" + month + "/" + day + " " + hour + ":" + minute + ":" + sec);
 
   // JS needs some strange hacky off-by-one fix for month
   return new Date(year, month-1, day, hour, minute, sec);
