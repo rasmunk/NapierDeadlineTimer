@@ -37,7 +37,7 @@
 			var offset = 0;
 			time = time ? time : this.factory.time.getDayCounter(this.showSeconds);
 			time = time.slice(0, -2); // Trim of the seconds -> last 2 digits
-			
+
 			if(time.length > children.length) {
 				$.each(time, function(i, digit) {
 					t.createList(digit);
