@@ -36,9 +36,9 @@
 			var children = this.factory.$el.find('ul');
 			var offset = 0;
 			time = time ? time : this.factory.time.getDayCounter(this.showSeconds);
-			//trim time
-			time = time.slice(0, 4);
-			
+			time = time.slice(0, -2); // Trim of the seconds -> last 2 digits
+
+			console.log(time);
 			if(time.length > children.length) {
 				$.each(time, function(i, digit) {
 					t.createList(digit);
@@ -52,10 +52,9 @@
 			{
 				offset = 2;
 			}
-
 			$(this.createDivider('Hours')).insertBefore(this.lists[this.lists.length - 4 + offset].$el);
-			$(this.createDivider('Days')).insertBefore(this.lists[this.lists.length - 6 + offset].$el);
-			//$(this.createDivider('Days', true)).insertBefore(this.lists[0].$el);
+			//$(this.createDivider('Days')).insertBefore(this.lists[this.lists.length - 6 + offset].$el);
+			$(this.createDivider('Days', true)).insertBefore(this.lists[0].$el);
 
 			this.base();
 		},
@@ -67,11 +66,9 @@
 		flip: function(time, doNotAddPlayClass) {
 			if(!time) {
 				time = this.factory.time.getDayCounter(this.showSeconds);
-							time = time.slice(0, 4);
+				time = time.slice(0, -2); // Trim of the seconds -> last 2 digits
 			}
-
 			this.autoIncrement();
-
 			this.base(time, doNotAddPlayClass);
 		}
 

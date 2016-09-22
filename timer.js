@@ -37,7 +37,6 @@ $(document).ready(function () {
   illuminati = new Audio('https://www.youtube.com/watch?v=fxfEg54cCKo');
   noscope = new Audio('http://soundboard.panictank.net/intervention%20420.mp3');
   b56cal = $.parseIcs('calendar.ics');
-  //console.log(b56cal);
   
   //Remove past dates
   var now = new Date();
@@ -92,11 +91,13 @@ $(document).ready(function () {
       id: t.name + "clock",
       "class": 'rightClockContainer'
     });
-    var clock = clockDiv.FlipClock({
-      clockFace: 'DailyCounter2'
+    // By using the clock.setTimer() method the flipclock framework chops off + 99 days so it becomes DD:HHHH:MM:SS
+    // by using the constructor instead it preserves the DDDD:HH:MM:SS format
+    var clock = clockDiv.FlipClock(((t.date - new Date()) * 0.001), {
+      clockFace: 'DailyCounter2',
+      countdown: true
     });
-    clock.setTime((t.date - new Date()) * 0.001);
-    clock.setCountdown(true);
+
     clocks.push({
       t: t.date,
       c: clock
@@ -113,7 +114,6 @@ $(document).ready(function () {
     });
     row.append(nameDiv);
     row.append(clockDiv);
-
     rightDiv.append(row);
   }
 
@@ -228,10 +228,7 @@ function ScrollDown() {
 }
 
 function UpdateBottomLabel() {
-  var bottomStr = "<p>" + (new Date()).toString().slice(0, 21);
-  bottomStr += " - Week " + getWeek() + "</p>";
-  
-  bottomStr += "<p><small>";
+  var bottomStr = "<p>" + (new Date()).toString().slice(0, 21) + "</p>";
   var next = getNextCalendarEvent();
   if (next === null || next === undefined) {
     bottomStr += "Nothing until next week!";
