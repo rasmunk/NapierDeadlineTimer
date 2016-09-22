@@ -61,7 +61,7 @@ var times = [
 	// Tri 2 16/17
 	
 	// Dr. Serrels
-	{ name: "Dr. Serrels ETA", date: new Date("05/may/2020") }
+	{ name: "Dr. Serrels ETA", date: new Date("28/june/2021") }
 	]
 
 function getSaas() {
