@@ -52,12 +52,16 @@ var times = [
 	{ name: "Halloween", date: new Date("31/oct/2016") },
 	{ name: "ASEng TW Pitch", date: new Date("15/nov/2016 00:01 AM") },
 	{ name: "WBL Hons Posters", date: new Date("16/nov/2016 01:00 PM") },
-	{ name: "Star Wars: Rogue One", date: new Date("15/dec/2016 00:01 AM") },
+	{ name: "Star Wars: Rogue", date: new Date("15/dec/2016 00:01 AM") },
 	{ name: "Thanksgiving", date: new Date("26/nov/2016") },
 	{ name: "Xmas", date: new Date("25/Dec/2016") },
 	{ name: "New Years", date: new Date("01/jan/2016") },
 
+	{ name: "G4E", date: new Date("20/oct/2016 09:00 AM") },
 	// Tri 2 16/17
+	
+	// Dr. Serrels
+	{ name: "Dr. Serrels ETA", date: new Date("05/may/2020") }
 	]
 
 function getSaas() {
@@ -90,8 +94,8 @@ function getLabClose() {
 
 
 function getWeek() {
-	var tri1 = new Date("7 September 2015");
-	var tri2 = new Date("11 January 2016");
+	var tri1 = new Date("5 September 2016");
+	var tri2 = new Date("11 January 2017");
 	var dd = new Date();
 	dd.setHours(0);
 	dd.setMilliseconds(0);

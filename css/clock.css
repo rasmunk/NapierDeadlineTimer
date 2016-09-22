@@ -100,12 +100,12 @@ body {
 
 .rightClockContainer {
   padding-top: 20px;
-  min-width:300px;
+  min-width:450px;
   width:30%;
   float: right;
 }
 .rightClockName{
-  padding-left: 34%;
+  padding-left: 15%;
   padding-top: 10px;
   float: left;
   width:32%;
